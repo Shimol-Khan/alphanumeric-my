@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+// Custom Styles
+
+// Hide Google Chrome Display Debugging Results
+.profiler-result{ display: none !important}
+
+@import "tailwindcss/utilities";
