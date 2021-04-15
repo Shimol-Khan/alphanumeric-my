@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Alphanumeric | Home</title>
+    <title>Alphanumeric | <%= yield :title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
   </head>
   <body>
+    <%= render 'shared/notification' %>
     <%= yield %>
   </body>
 </html>

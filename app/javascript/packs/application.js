@@ -16,3 +16,12 @@ global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
 // Custom javascript
+
+// Fancy Alert
+$(document).ready(function (){
+	setTimeout(function(){
+		$('#notice_wrapper').fadeOut("fast",function(){
+			$(this).remove();
+		})
+	},3500);
+});

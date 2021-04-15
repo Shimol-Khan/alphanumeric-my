@@ -1,0 +1,52 @@
+<% content_for :title do %>
+  Sign In
+<% end %>
+
+<!-------------------- Login Form ----------------->
+<div class="min-h-screen pt-12 md:pt-32 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
+  <main class="bg-white max-w-2xl mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
+    <section>
+      <div>
+        <%= link_to root_path, :class=>"text-sm text-gray-400 hover:text-gray-600" do %>
+          <i class="fas fa-angle-left"></i>
+          Back
+        <% end %>
+      </div>
+      <h3 class="font-bold text-2xl">Welcome to AlphaNumeric</h3>
+      <p class="text-gray-600 pt-2">Sign in to your account.</p>
+    </section>
+
+    <section class="mt-10">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="mb-6 pt-3 rounded bg-gray-200">
+          <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="name">Email</label>
+          <%= f.input :email,
+                label: false,
+                error: false,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email",:class=>"bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" }
+          %>
+        </div>
+        <div class="mb-6 pt-3 rounded bg-gray-200">
+          <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="name">Password</label>
+          <%= f.input :password,
+                label: false,
+                error: false,
+                required: true,
+                input_html: { autocomplete: "current-password",:class=>"bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3" }
+          %>
+        </div>
+        
+        <%= f.button :submit, "Sign in",:class=>"w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded shadow-lg hover:shadow-xl transition duration-200" %>
+      <% end %>
+    </section>
+  </main>
+
+  <div class="max-w-lg mx-auto text-center mt-12 mb-6">
+    <p class="text-gray-500">Need an account?
+      <%= link_to "Sign up", new_user_registration_path, :class=>"font-bold hover:underline"%>.
+    </p>
+  </div>
+</div>
+<!-------------------/ Login Form ----------------->

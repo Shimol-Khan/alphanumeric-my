@@ -1,2 +1,17 @@
-<h1>Static#index</h1>
-<p>Find me in app/views/static/index.html.erb</p>
+<% content_for :title do %>
+  Home
+<% end %>
+
+<% provide(:home_active, 'active') %>
+
+<!-------------------- Main Navbar ------------------>
+<% if user_signed_in? %>
+    <% if current_user.admin? %>
+        <%= render 'shared/nav_admin' %>
+    <% else %>
+        <%= render 'shared/nav_user' %>
+    <% end %>
+<% else %>
+    <%= render 'shared/nav_public' %>
+<% end %>
+<!-------------------/ Main Navbar ------------------>

@@ -1,0 +1,97 @@
+<% content_for :title do %>
+  Profile
+<% end %>
+
+<!-------------------- Main Navbar ------------------>
+<% if user_signed_in? %>
+    <% if current_user.admin? %>
+        <%= render 'shared/nav_admin' %>
+    <% else %>
+        <%= render 'shared/nav_user' %>
+    <% end %>
+<% else %>
+    <%= render 'shared/nav_public' %>
+<% end %>
+<!-------------------/ Main Navbar ------------------>
+
+<!------------------ Profile Section ---------------->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 md:py-32 mx-auto flex flex-col">
+    <div class="lg:w-4/6 mx-auto">
+      <div class="flex flex-col sm:flex-row mt-10">
+        <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+          <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+            <% if @user.image_link? %>
+                <%= image_tag(@user.image_link, :class=>"rounded-full shadow-lg h-20 w-20")%>
+            <% else %>
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            <% end %>
+          </div>
+          <div class="flex flex-col items-center text-center justify-center">
+            <h2 class="font-medium title-font mt-4 text-gray-900 text-lg"><%= @user.name %></h2>
+            <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
+            <p class="text-sm">Member since <%= @user.created_at.strftime("%B, %d, %Y")%></p>
+          </div>
+        </div>
+
+        <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+          <% if @user.about? %>
+            <p class="leading-relaxed text-lg mb-4 text-justify"><%= @user.about %></p>
+          <% end %>
+          <div class="flex justify-start">
+            <!----------- FB Link ---------->
+                <% if @user.fb_link? %>
+                    <div class="pr-2">
+                        <%= link_to "#{@user.fb_link}", :class=>"text-gray-500", :target=>"_blank" do %>
+                            <i class="fab fa-facebook fa-2x"></i>
+                        <% end %>
+                    </div>
+                <% end %>
+            <!----------/ FB Link ---------->
+
+            <!----------- IG Link ---------->
+                <% if @user.ig_link? %>
+                    <div class="px-2">
+                        <%= link_to "#{@user.ig_link}", :class=>"text-gray-500", :target=>"_blank" do %>
+                            <i class="fab fa-instagram fa-2x"></i>
+                        <% end %>
+                    </div>
+                <% end %>
+            <!----------/ IG Link ---------->
+
+            <!----------- TWITTER Link ---------->
+                <% if @user.twitter_link? %>
+                    <div class="px-2">
+                        <%= link_to "#{@user.twitter_link}", :class=>"text-gray-500", :target=>"_blank" do %>
+                            <i class="fab fa-twitter fa-2x"></i>
+                        <% end %>
+                    </div>
+                <% end %>
+            <!----------/ TWITTER Link ---------->
+
+            <!----------- LINKEDIN Link ---------->
+                <% if @user.in_link? %>
+                    <div class="px-2">
+                        <%= link_to "#{@user.in_link}", :class=>"text-gray-500", :target=>"_blank" do %>
+                            <i class="fab fa-linkedin-in fa-2x"></i>
+                        <% end %>
+                    </div>
+                <% end %>
+            <!----------/ LINKEDIN Link ---------->
+          </div>
+
+          <%= link_to root_path, :class=>"text-indigo-500 inline-flex items-center mt-4" do %>
+          Back
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-----------------/ Profile Section ---------------->
