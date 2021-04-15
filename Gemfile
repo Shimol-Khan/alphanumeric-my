@@ -24,4 +24,7 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Custom Gems
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+gem 'simple_form', '~> 5.1'
