@@ -40,7 +40,7 @@
               </svg>
             </div>
             <h2 class="text-lg text-gray-900 font-medium title-font mb-2"><%= link_to question.title, question%></h2>
-            <p class="leading-relaxed text-base">You asked <%= time_ago_in_words(question.created_at)%> ago</p>
+            <p class="leading-relaxed text-base">Asked <%= time_ago_in_words(question.created_at)%> ago</p>
           </div>
         </div>
       <% end %>

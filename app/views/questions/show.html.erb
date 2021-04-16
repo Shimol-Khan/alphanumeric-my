@@ -16,7 +16,7 @@
 
 <!------------------- Question Details -------------->
 <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto flex flex-wrap justify-center">
+  <div class="container px-5 pt-24 pb-5 mx-auto flex flex-wrap justify-center">
     <div class="flex flex-wrap -m-4">
       <div class="p-4 lg:w-full md:w-full">
         <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
@@ -67,3 +67,48 @@
   </div>
 </section>
 <!------------------/ Question Details -------------->
+
+<!--------------------- Answers --------------------->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-1 mx-auto flex flex-wrap justify-center">
+    <div class="flex flex-wrap -m-4 question-answers">
+    <% @answers.each do |answer| %>
+      <div class="p-4 lg:w-full md:w-full answer_pane">
+        <%= render 'answers/answer', answer: answer %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!--------------------/ Answers --------------------->
+
+<!------------------ Answer Form -------------------->
+<section class="text-gray-600 body-font relative">
+  <div class="container px-5 py-2 mx-auto flex sm:flex-nowrap flex-wrap">
+    <div class="lg:w-full md:w-full bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+      <div class="p-4 answer_pane">
+          <%= form_with model: [@question, @answer], remote: true do |f| %>
+            <div class="mb-6 pt-3 rounded">
+              <%= f.text_area :body,
+                label: false,
+                placeholder: "Your answer ...",
+                class: "bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3 pt-3",
+                rows: 5
+              %>
+            </div>
+            <div class="mb-6 pt-3 rounded bg-gray-200">
+              <%= f.text_field :link,
+                label: false,
+                placeholder: "Link or Reference",
+                class: "bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3 pt-3"
+              %>
+            </div>
+            <div class="text-center">
+              <%= f.submit "Answer", remote: true, :class=>"w-full text-gray-100 bg-green-500 py-2 px-4 rounded shadow-lg hover:text-white inline-flex items-center justify-center" %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!------------------ Answer Form -------------------->
