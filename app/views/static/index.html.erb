@@ -25,12 +25,13 @@
         <div class="h-full bg-gradient-to-tr from-green-400 to-green-100 shadow-lg px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
           <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Math Quiz</h1>
           <p class="leading-relaxed mb-3">Take Our Weekly Math Quiz</p>
-          <a class="text-gray-600 inline-flex items-center">Start
+          <%= link_to quiz_path, :class=>"text-gray-600 inline-flex items-center" do %>
+            Take
             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
               <path d="M12 5l7 7-7 7"></path>
             </svg>
-          </a>
+          <% end %>
         </div>
       </div>
       <!------------------ Math Quiz ------------------>
