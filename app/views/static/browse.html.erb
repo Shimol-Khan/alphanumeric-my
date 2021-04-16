@@ -1,0 +1,53 @@
+<% content_for :title do %>
+  Browse Problems
+<% end %>
+
+<!-------------------- Main Navbar ------------------>
+<% if user_signed_in? %>
+    <% if current_user.admin? %>
+        <%= render 'shared/nav_admin' %>
+    <% else %>
+        <%= render 'shared/nav_user' %>
+    <% end %>
+<% else %>
+    <%= render 'shared/nav_public' %>
+<% end %>
+<!-------------------/ Main Navbar ------------------>
+
+<!----------------------- Header -------------------->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 pt-24 pb-5 mx-auto">
+    <div class="flex flex-col w-full mb-20">
+      <h2 class="text-sm text-center bg-green-100 py-4 shadow text-green-500 tracking-widest font-medium title-font mb-1">
+      <i class="far fa-hand-peace mr-1"></i>
+      Currently we have total <%= Question.all.count %> Problems</h2>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+      <div class="container px-5 py-24 mx-auto">
+        <% Question.all.each do |question| %>  
+					<div class="-my-8 divide-y-2 divide-gray-100">
+            <div class="py-8 flex flex-wrap md:flex-nowrap border-b border-1 border-gray-100">
+              <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                <span class="mt-1 text-gray-500 text-sm"><%= question.created_at.strftime("%B, %d, %Y")%></span>
+              </div>
+              <div class="md:flex-grow">
+                <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 mt-3"><%= question.title %></h2>
+                  <p class="leading-relaxed">Asked by <%= link_to question.user.name, profile_path(question.user) %></p>
+                  <p class="leading-relaxed text-justify"><%= truncate(question.body, length: 300) %></p>
+									<%= link_to question, :class=>"text-green-500 inline-flex items-center mt-4" do %>
+										Detail
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+									<% end %>
+              </div>
+                </div>
+            </div>
+				<% end %>
+      </div>
+    	</section>
+    </div>
+  </div>
+</section>
+<!----------------------/ Header -------------------->

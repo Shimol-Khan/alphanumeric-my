@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root to: 'static#index'
 
   get 'profile/:id', to: 'users#profile', as: :profile
+  get 'browse', to: 'static#browse', as: :browse
 
   devise_scope :user do
     get '/users', to: 'devise/registrations#new'
