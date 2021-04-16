@@ -1,0 +1,17 @@
+<% content_for :title do %>
+  Ask Question
+<% end %>
+
+<!-------------------- Main Navbar ------------------>
+<% if user_signed_in? %>
+    <% if current_user.admin? %>
+        <%= render 'shared/nav_admin' %>
+    <% else %>
+        <%= render 'shared/nav_user' %>
+    <% end %>
+<% else %>
+    <%= render 'shared/nav_public' %>
+<% end %>
+<!-------------------/ Main Navbar ------------------>
+
+<%= render 'form', question: @question %>
