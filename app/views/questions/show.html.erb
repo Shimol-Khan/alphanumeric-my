@@ -16,7 +16,7 @@
 
 <!------------------- Question Details -------------->
 <section class="text-gray-600 body-font">
-  <div class="container px-5 pt-24 pb-5 mx-auto flex flex-wrap justify-center">
+  <div class="container px-5 pt-2 pb-2 mx-auto flex flex-wrap justify-center">
     <div class="flex flex-wrap -m-4">
       <div class="p-4 lg:w-full md:w-full">
         <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
@@ -83,10 +83,10 @@
 <!--------------------/ Answers --------------------->
 
 <!------------------ Answer Form -------------------->
-<section class="text-gray-600 body-font relative">
-  <div class="container px-5 py-2 mx-auto flex sm:flex-nowrap flex-wrap">
-    <div class="lg:w-full md:w-full bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-      <div class="p-4 answer_pane">
+<section class="text-gray-600 body-font">
+  <div class="container px-5 mx-auto flex sm:flex-nowrap flex-wrap">
+    <div class="lg:w-full md:w-full bg-white flex flex-col md:ml-auto w-full md:py-1 mt-2 md:mt-0">
+      <div class="px-4 answer_pane">
           <%= form_with model: [@question, @answer], remote: true do |f| %>
             <div class="mb-6 pt-3 rounded">
               <%= f.text_area :body,
