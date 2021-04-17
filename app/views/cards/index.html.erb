@@ -1,0 +1,52 @@
+<% content_for :title do %>
+  Flash Card
+<% end %>
+
+<!-------------------- Main Navbar ------------------>
+<% if user_signed_in? %>
+    <% if current_user.admin? %>
+        <%= render 'shared/nav_admin' %>
+    <% else %>
+        <%= render 'shared/nav_user' %>
+    <% end %>
+<% else %>
+    <%= render 'shared/nav_public' %>
+<% end %>
+<!-------------------/ Main Navbar ------------------>
+
+<% if current_user.cards.count < 1 %>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 pt-24 pb-5 mx-auto">
+      <div class="flex flex-col w-full mb-20">
+        <h2 class="text-sm text-center bg-green-100 py-4 shadow text-green-500 tracking-widest font-medium title-font mb-1">
+        You haven't created any card.</h2>
+      </div>
+    </div>
+  </section>
+<% else %>
+<!----------------------- Cards --------------------->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 pt-5 pb-1 mx-auto">
+    <div class="flex flex-wrap -m-4">
+    <% current_user.cards.each do |card| %>
+      <div class="p-1 lg:w-1/2">
+        <div class="h-full bg-green-100 bg-opacity-75 px-8 pt-5 pb-5 overflow-hidden text-center relative shadow">
+          <p class="title-font sm:text-xl text-xl font-medium text-gray-900">
+            <%= link_to card.question, card%>
+          </p>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</section>
+<!----------------------- Cards --------------------->
+<% end %>
+
+<section class="text-gray-600 body-font">
+  <div class="container px-2 py-1 mx-auto">
+    <%= link_to new_card_path, :class=>"w-full text-gray-600 bg-gray-200 py-2 px-4 rounded shadow-lg hover:text-gray-900 inline-flex items-center justify-center" do %>
+    <i class="fas fa-plus-circle fa-2x"></i>
+    <% end %>
+  </div>
+</div>
