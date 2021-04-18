@@ -18,13 +18,14 @@
 
 <!---------------------- Menus ---------------------->
 <section class="text-gray-600 body-font">
-  <div class="container px-5 py-5 mx-auto">
+  <div class="container px-5 py-1 mx-auto">
     <div class="flex flex-wrap -m-4">
     <!------------------ Math Quiz ------------------>
       <div class="p-4 lg:w-1/2">
-        <div class="h-full border bg-gray-50 shadow-lg px-8 pt-16 pb-24 overflow-hidden text-center relative">
-          <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Math Quiz</h1>
-          <p class="leading-relaxed mb-3">Take Our Weekly Math Quiz</p>
+        <div class="h-full border shadow-lg px-8 pt-1 pb-1 overflow-hidden text-center relative rounded">
+          <%= image_tag('https://i.imgur.com/NggOKS3.png', :class=>"inline text-center h-40 w-64")%>
+          <h1 class="title-font sm:text-base text-base font-medium text-gray-900 mb-1">Math Quiz</h1>
+          <p class="text-xs leading-relaxed mb-3">Take Our Weekly Math Quiz</p>
           <%= link_to quiz_path, :class=>"text-gray-600 inline-flex items-center" do %>
             Take
             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -38,9 +39,10 @@
 
       <!----------------- Flash Card ------------------>
       <div class="p-4 lg:w-1/2">
-        <div class="h-full border bg-gray-50 shadow-lg px-8 pt-16 pb-24 overflow-hidden text-center relative">
-          <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Flash Card</h1>
-          <p class="leading-relaxed mb-3">Create And Play Your Flash Card</p>
+        <div class="h-full border shadow-lg px-8 pt-3 pb-3 overflow-hidden text-center relative rounded">
+          <%= image_tag('https://i.imgur.com/MdgmhS1.png', :class=>"inline text-center h-40 w-64")%>
+          <h1 class="title-font sm:text-base text-base font-medium text-gray-900 mb-1">Flash Card</h1>
+          <p class="text-xs leading-relaxed mb-3">Create And Play Your Flash Card</p>
           <%= link_to cards_path, :class=>"text-gray-600 inline-flex items-center" do %>
             Start
             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -52,12 +54,13 @@
       </div>
       <!----------------/ Flash Card ------------------>
     </div>
-    <div class="flex flex-wrap -m-4 md:mt-5">
+    <div class="flex flex-wrap -m-4 md:mt-2">
     <!------------------- Ask Question ---------------->
       <div class="p-4 lg:w-1/2">
-        <div class="h-full border bg-gray-50 shadow-lg px-8 pt-16 pb-24 overflow-hidden text-center relative">
-          <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Ask Question</h1>
-          <p class="leading-relaxed mb-3">Ask Any Math Question</p>
+        <div class="h-full border shadow-lg px-8 pt-3 pb-3 overflow-hidden text-center relative rounded">
+          <%= image_tag('https://i.imgur.com/dUa2sE6.png', :class=>"inline text-center h-40 w-64")%>
+          <h1 class="title-font sm:text-base text-base font-medium text-gray-900 mb-1">Ask Question</h1>
+          <p class="text-xs leading-relaxed mb-3">Ask Any Math Question</p>
           <%= link_to questions_path, :class=>"text-gray-600 inline-flex items-center" do %>
             Ask
             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -71,9 +74,10 @@
 
       <!----------------- Browse Answers ---------------->
       <div class="p-4 lg:w-1/2">
-        <div class="h-full border bg-gray-50 shadow-lg px-8 pt-16 pb-24 overflow-hidden text-center relative">
-          <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Problems Database</h1>
-          <p class="leading-relaxed mb-3">Browse All Question's Answers</p>
+        <div class="h-full border shadow-lg px-8 pt-3 pb-3 overflow-hidden text-center relative rounded">
+          <%= image_tag('https://i.imgur.com/XDG6dj3.png', :class=>"inline text-center h-40 w-64")%>
+          <h1 class="title-font sm:text-base text-base font-medium text-gray-900 mb-1">Problems Database</h1>
+          <p class="text-xs leading-relaxed mb-3">Browse All Question's Answers</p>
           <%= link_to browse_path, :class=>"text-gray-600 inline-flex items-center" do %>
             Browse
             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
