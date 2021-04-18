@@ -11,4 +11,8 @@ class StaticController < ApplicationController
 
   def quiz
   end
+
+  def team
+    
+  end
 end

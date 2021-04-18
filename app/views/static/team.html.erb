@@ -1,0 +1,89 @@
+<% content_for :title do %>
+  Team
+<% end %>
+
+<% provide(:home_active, 'active') %>
+
+<!-------------------- Main Navbar ------------------>
+<% if user_signed_in? %>
+    <% if current_user.admin? %>
+        <%= render 'shared/nav_admin' %>
+    <% else %>
+        <%= render 'shared/nav_user' %>
+    <% end %>
+<% else %>
+    <%= render 'shared/nav_public' %>
+<% end %>
+<!-------------------/ Main Navbar ------------------>
+
+<!------------------ Team Description --------------->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 pt-4 pb-1 mx-auto">
+        <div class="flex flex-col w-full mb-1">
+            <h2 class="text-sm text-center bg-green-100 py-3 shadow text-green-500 tracking-widest font-medium title-font mb-1">
+                This system has been implemented as a courseware project of MEE3023 Subject of Universiti Pendidikan Sultan Idris.
+            </h2>
+        </div>
+    </div>
+</section>
+
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-1 mx-auto">
+        <h1 class="text-center py-1 text-gray-500">Developer Team</h1>
+    </div>
+</section>
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 pt-5 pb-1 mx-auto">
+    <div class="flex flex-wrap -m-4">
+      <div class="p-1 lg:w-1/2">
+        <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-5 pb-5 overflow-hidden text-center relative shadow">
+          <p class="title-font sm:text-xl text-xl font-medium text-gray-900">
+            SANTHNI A/P BALASUBRAMANIAM
+          </p>
+          <h2 class="mt-2 tracking-widest text-xs title-font font-medium text-gray-400 mb-1">D20182085362</h2>
+        </div>
+      </div>
+
+      <div class="p-1 lg:w-1/2">
+        <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-5 pb-5 overflow-hidden text-center relative shadow">
+          <p class="title-font sm:text-xl text-xl font-medium text-gray-900">
+            SHIMOL KHAN
+          </p>
+          <h2 class="mt-2 tracking-widest text-xs title-font font-medium text-gray-400 mb-1">D20171079547</h2>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap -m-4">
+      <div class="p-1 mt-6 lg:w-1/2">
+        <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-5 pb-5 overflow-hidden text-center relative shadow">
+          <p class="title-font sm:text-xl text-xl font-medium text-gray-900">
+            ANIS NADHIRAH BINTI MOHD NADZIRI
+          </p>
+          <h2 class="mt-2 tracking-widest text-xs title-font font-medium text-gray-400 mb-1">D20182085349</h2>
+        </div>
+      </div>
+
+      <div class="p-1 mt-6 lg:w-1/2">
+        <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-5 pb-5 overflow-hidden text-center relative shadow">
+          <p class="title-font sm:text-xl text-xl font-medium text-gray-900">
+            NUR SAKINA BINTI KHAWAJA MOINUDDIN
+          </p>
+          <h2 class="mt-2 tracking-widest text-xs title-font font-medium text-gray-400 mb-1">D20181081691</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap -m-4 justify-center">
+      <div class="p-1 mt-6 lg:w-1/2">
+        <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-5 pb-5 overflow-hidden text-center relative shadow">
+          <p class="title-font sm:text-xl text-xl font-medium text-gray-900">
+            NUR SYAZANA BINTI NAHAR
+          </p>
+          <h2 class="mt-2 tracking-widest text-xs title-font font-medium text-gray-400 mb-1">D20182085330</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-----------------/ Team Description --------------->
