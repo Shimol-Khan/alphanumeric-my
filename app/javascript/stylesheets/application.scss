@@ -24,6 +24,10 @@
 	}
 }
 
+.active{
+    font-weight: bold;
+}
+
 // Modal
 .modal {
 	transition: opacity 0.25s ease;
@@ -45,6 +49,10 @@ body.modal-active {
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 400px) {
+    .start_btn{top: 55%;}
 }
 
 .info_box.activeInfo,
@@ -77,6 +85,23 @@ body.modal-active {
     pointer-events: none;
     transition: all 0.3s ease;
 }
+
+@media only screen and (max-width: 400px) {
+    .info_box {
+        width: 320px;
+    }
+    .info_box .info-title{
+        height: 30px;
+        width: 100%;
+        border-bottom: 1px solid lightgrey;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        border-radius: 5px 5px 0 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+  }
 
 .info_box .info-title{
     height: 60px;
@@ -193,6 +218,12 @@ body.modal-active {
     left: 0px;
     height: 3px;
     background: #007bff;
+}
+
+@media only screen and (max-width: 400px) {
+    .quiz_box{
+        width: 320px;
+    }
 }
 
 section{
@@ -338,6 +369,10 @@ footer button.show{
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 400px) {
+    width: 320px;
 }
 
 .result_box .icon{

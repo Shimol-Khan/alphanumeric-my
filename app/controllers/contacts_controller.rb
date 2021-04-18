@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to contacts_url, notice: "Contact was successfully created." }
+        format.html { redirect_to contacts_url, notice: "Message Sent!" }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact.destroy
     respond_to do |format|
-      format.html { redirect_to contacts_url, notice: "Contact was successfully destroyed." }
+      format.html { redirect_to contacts_url, notice: "Message was successfully deleted!" }
       format.json { head :no_content }
     end
   end

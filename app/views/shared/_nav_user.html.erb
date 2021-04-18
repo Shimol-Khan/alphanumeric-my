@@ -5,11 +5,28 @@
       <%= link_to "AlphaNumeric",root_path, :class=>"ml-3 text-xl"%>
     </a>
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <%= link_to "Home", root_path, :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
-      <%= link_to "Team", team_path, :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
-      <%= link_to "Contact", contacts_path, :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
-      <%= link_to "Profile", profile_path(current_user), :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
-      <%= link_to "Account", edit_user_registration_path, :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
+      <div class="<%= yield(:home_active) %>">
+        <%= link_to "Home", root_path, :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
+      </div>
+
+      <div class="<%= yield(:team_active) %>">
+        <%= link_to team_path, :class=>"mr-5 text-gray-600 hover:text-gray-900" do %>
+        <i class="fas fa-circle text-xs text-red-400"></i>
+        Team
+      <% end %>
+      </div>
+      
+      <div class="<%= yield(:contact_active) %>">
+        <%= link_to "Contact", contacts_path, :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
+      </div>
+
+      <div class="<%= yield(:profile_active) %>">
+        <%= link_to "Profile", profile_path(current_user), :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
+      </div>
+      
+      <div class="<%= yield(:account_active) %>">
+        <%= link_to "Account", edit_user_registration_path, :class=>"mr-5 text-gray-600 hover:text-gray-900"%>
+      </div>
     </nav>
     <%= link_to destroy_user_session_path, method: :delete, :class=>"inline-flex items-center bg-green-400 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 rounded text-base text-gray-100 mt-4 md:mt-0 shadow" do %>
       Log-Out

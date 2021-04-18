@@ -2,6 +2,8 @@
   Math Quiz
 <% end %>
 
+<% provide(:home_active, 'active') %>
+
 <!-------------------- Main Navbar ------------------>
 <% if user_signed_in? %>
     <% if current_user.admin? %>
@@ -16,17 +18,17 @@
 
 <!------------------- Quiz ---------------->
 
-<section class="text-gray-600 body-font relative">
+<section class="text-gray-600 body-font relative mb-20">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Hi, <%= current_user.name %>!</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">We keep the question sets changing weekly basis.</p>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">We expect you to finish the test right now and join the test every week. It will solidify your Math knowledge. Good Luck.</p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 ">Hi, <%= current_user.name %>!</h1>
+      <p class="lg:w-2/3 invisible md:visible mx-auto leading-relaxed text-base">We keep the question sets changing weekly basis.</p>
+      <p class="lg:w-2/3 invisible md:visible mx-auto leading-relaxed text-base">We expect you to finish the test right now and join the test every week. It will solidify your Math knowledge. Good Luck.</p>
     </div>
 </div>
 </section>
 
-<div class="start_btn mt-10"><button>Start Quiz</button></div>
+<div class="start_btn md:mt-5"><button>Start Quiz</button></div>
 
     <!-- Info Box -->
     <div class="info_box">

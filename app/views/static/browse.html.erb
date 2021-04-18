@@ -2,6 +2,8 @@
   Browse Problems
 <% end %>
 
+<% provide(:home_active, 'active') %>
+
 <!-------------------- Main Navbar ------------------>
 <% if user_signed_in? %>
     <% if current_user.admin? %>
