@@ -18,6 +18,9 @@ class Ability
         can :update, Question, user_id: user.id
         can :destroy, Question, user_id: user.id
 
+        # Learning Management
+        can :read, Learning
+
         # Answer
         # Nobody can answer except Admin
 

@@ -88,6 +88,23 @@
         </div>
       </div>
       <!----------------/ Browse Answers ---------------->
+
+      <!---------------- Learning Lessons --------------->
+      <div class="p-4 lg:w-full">
+        <div class="h-full border shadow-lg px-8 pt-3 pb-3 overflow-hidden text-center relative rounded">
+          <%= image_tag('https://i.imgur.com/mxHMQmU.png', :class=>"inline text-center h-40 w-64")%>
+          <h1 class="title-font sm:text-base text-base font-medium text-gray-900 mb-1">Math Lessons</h1>
+          <p class="text-xs leading-relaxed mb-3">Browse Intensive Math Lessons To Be Prepared For Your Quiz</p>
+          <%= link_to learnings_path, :class=>"text-gray-600 inline-flex items-center" do %>
+            Browse
+            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          <% end %>
+        </div>
+      </div>
+      <!---------------- Learning Lessons --------------->
     </div>
   </div>
 </section>

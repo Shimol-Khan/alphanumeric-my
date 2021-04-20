@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :answers
   has_many :cards
   has_many :contacts
+  has_many :learnings
 end

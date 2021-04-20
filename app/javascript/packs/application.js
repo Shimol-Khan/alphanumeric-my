@@ -23,5 +23,5 @@ $(document).ready(function (){
 		$('#notice_wrapper').fadeOut("fast",function(){
 			$(this).remove();
 		})
-	},3500);
+	},2500);
 });
